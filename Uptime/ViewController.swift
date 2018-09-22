@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(gestureRecognizer)
     }
     
-    func updateLabel() {
+    @objc func updateLabel() {
         let FORMAT = "%02d"
         let (days, hours, mins, secs) = secondsToDaysHoursMinutesSeconds(seconds: uptime())
         let paddedDays  = String(format: FORMAT, days)
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         return uptime
     }
     
-    func viewTapped(_ gestureRecognizer: UIGestureRecognizer) {
+    @objc func viewTapped(_ gestureRecognizer: UIGestureRecognizer) {
         currentColour = nextColour()
         updateLabelColour()
         UserDefaults.standard.set(currentColour.rawValue, forKey: USER_DEFAULTS_KEY)
